@@ -37,7 +37,8 @@ Ext.define("HearBlog.view.Blog", {
 
                 listeners: {
                     itemtap: function(nestedList, list, index, element, post) {
-                        this.getDetailCard().setHtml(post.get('content'));
+                        
+                        this.getDetailCard().setHtml(post.get('content')+'aa<script type="text/javascript">emplay("hello");</script>');
                     }
                 }
             }
