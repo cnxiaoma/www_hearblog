@@ -37,22 +37,15 @@ Ext.define("HearBlog.view.Blog", {
                 
                 listeners: {
                     itemtap: function(nestedList, list, index, element, post) {
-                            var audioBase = {
-                                xtype: 'audio',
-                                url  : 'crash.mp3',
-                                loop : true
-                            };
-                        var audio =  this.getParent().down('audio');
+                        var audio =  this.getParent().getParent().down('audio');
                         audio.play();
                         this.getDetailCard().setHtml(post.get('content')+'aa<script type="text/javascript">emplay("hello");</script>');
-                    },
-                    
-                    audioBase:{
+                    }
+                },    
+                audioBase:{
                     xtype : 'audio',
                     hidden: true,
-                    url   : 'crash.mp3'
-                    }
+                    url   : 'http://translate.google.com/translate_tts?q=hello'
                 }
             }
-
 });
