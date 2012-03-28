@@ -36,10 +36,7 @@ Ext.define("HearBlog.view.Blog", {
                     items: [
                         {
                         xtype : 'audio',
-                        //loop : true
-
-                        //hidden: true,
-                        //url   : 'http://translate.google.com/translate_tts?q=hello'
+                        hidden: true,
                         }
                     ]    
                 },
@@ -48,10 +45,11 @@ Ext.define("HearBlog.view.Blog", {
                     itemtap: function(nestedList, list, index, element, post) {
                         this.getDetailCard().setHtml(post.get('content'));
                         var audio = this.getDetailCard().down('audio');
-                        audio.setUrl('http://hearblog.openpk.org/tts.php?text='+s);
-                        audio.play();
-                        s++;
-                        //alert("aa");
+                    
+                        var s=encodeURIComponent(post.get('content'));
+                        //audio.setUrl('http://hearblog.openpk.org/tts.php?text='+s);
+                        //audio.setUrl('http://tts.labs.ericsson.net/read?devkey=&text='+s);
+                        //audio.play();
                        }
                 },    
                 

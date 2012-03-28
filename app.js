@@ -3,7 +3,7 @@ Ext.Loader.setPath({
     'Ext': 'sdk/src'
 });
 //</debug>
-var s=0;
+
 Ext.application({
     name: 'HearBlog',
 
