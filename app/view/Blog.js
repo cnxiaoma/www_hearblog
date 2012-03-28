@@ -34,11 +34,23 @@ Ext.define("HearBlog.view.Blog", {
                     scrollable: true,
                     styleHtmlContent: true
                 },
-
+                
                 listeners: {
                     itemtap: function(nestedList, list, index, element, post) {
-                        
+                            var audioBase = {
+                                xtype: 'audio',
+                                url  : 'crash.mp3',
+                                loop : true
+                            };
+                        var audio =  this.getParent().down('audio');
+                        audio.play();
                         this.getDetailCard().setHtml(post.get('content')+'aa<script type="text/javascript">emplay("hello");</script>');
+                    },
+                    
+                    audioBase:{
+                    xtype : 'audio',
+                    hidden: true,
+                    url   : 'crash.mp3'
                     }
                 }
             }
