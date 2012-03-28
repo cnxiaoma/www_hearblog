@@ -7,7 +7,6 @@ Ext.define("HearBlog.view.Main", {
         tabBarPosition: 'bottom',
 
         items: [
-            // This is the home page, just some simple html
             {
                 title: 'home',
                 iconCls: 'home',

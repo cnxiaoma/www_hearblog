@@ -30,22 +30,30 @@ Ext.define("HearBlog.view.Blog", {
                 },
 
                 detailCard: {
-                    xtype: 'panel',
+                    xtype: 'container',
                     scrollable: true,
-                    styleHtmlContent: true
+                    styleHtmlContent: true,
+                    items: [
+                        {
+                        xtype : 'audio',
+                        //loop : true
+
+                        //hidden: true,
+                        //url   : 'http://translate.google.com/translate_tts?q=hello'
+                        }
+                    ]    
                 },
                 
                 listeners: {
                     itemtap: function(nestedList, list, index, element, post) {
-                        var audio =  this.getParent().getParent().down('audio');
+                        this.getDetailCard().setHtml(post.get('content'));
+                        var audio = this.getDetailCard().down('audio');
+                        audio.setUrl('http://hearblog.openpk.org/tts.php?text='+s);
                         audio.play();
-                        this.getDetailCard().setHtml(post.get('content')+'aa<script type="text/javascript">emplay("hello");</script>');
-                    }
+                        s++;
+                        //alert("aa");
+                       }
                 },    
-                audioBase:{
-                    xtype : 'audio',
-                    hidden: true,
-                    url   : 'http://translate.google.com/translate_tts?q=hello'
-                }
+                
             }
 });

@@ -65,24 +65,6 @@
         }
     </style>
     <link rel="stylesheet" type="text/css" href="resources/css/app.css">
-    <script type="text/javascript">      
-        var emflag = 0;  
-        var em;
-        function emplay(msg)
-        {
-            if(emflag==0){
-                emflag=1;
-            }
-            else{
-                document.documentElement.removeChild(em);
-            }
-            em = document.createElement("embed");
-            em.autostart="1" ;
-            em.hidden="1";
-            em.src="http://translate.google.com/translate_tts?q="+msg;
-            document.documentElement.appendChild(em);
-        }
-    </script>  
     <script type="text/javascript" src="sdk/sencha-touch.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </head>
