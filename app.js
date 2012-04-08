@@ -7,11 +7,11 @@ Ext.Loader.setPath({
 Ext.application({
     name: 'HearBlog',
 
-    requires: [
-        'Ext.MessageBox'
-    ],
+    requires: [ 'Ext.MessageBox' ],
 
-    views: ['Main','Home','Blog'],
+    views: ['Main','Home','Blog','RssList','RssEditPanel','RssForm'],
+
+    controllers: [ 'MainController' ],
 
     icon: {
         57: 'resources/icons/Icon.png',

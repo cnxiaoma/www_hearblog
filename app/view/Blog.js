@@ -29,6 +29,17 @@ Ext.define("HearBlog.view.Blog", {
                     }
                 },
 
+                toolbar:{
+                    docked: "top", xtype: "titlebar", ui: "light", inline: true,
+                    defaults:{iconMask:true,ui:'plain'},
+                    items:[
+                        {
+                            iconCls: 'add',
+                            hidden: true
+                        }
+                    ]
+                },
+
                 detailCard: {
                     xtype: 'container',
                     scrollable: true,
@@ -36,13 +47,14 @@ Ext.define("HearBlog.view.Blog", {
                     items: [
                         {
                         xtype : 'audio',
-                        hidden: true,
+                        hidden: true
                         }
                     ]    
                 },
                 
                 listeners: {
                     itemtap: function(nestedList, list, index, element, post) {
+                       // this.parent.child('toolbar').hidden=true;
                         this.getDetailCard().setHtml(post.get('content'));
                         var audio = this.getDetailCard().down('audio');
                     
@@ -51,7 +63,6 @@ Ext.define("HearBlog.view.Blog", {
                         //audio.setUrl('http://tts.labs.ericsson.net/read?devkey=&text='+s);
                         //audio.play();
                        }
-                },    
-                
+                }
             }
 });
